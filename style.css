@@ -1,3 +1,91 @@
+/* Branding Colors */
+:root {
+    --primary-color: #00e5ff;     /* Electric Cyan */
+    --secondary-color: #0a0a0a;   /* Near-Black */
+    --background-color: #121212;  /* Dark Gray */
+    --text-color: #e0e0e0;        /* Light Gray */
+    --accent-color: #ff1744;      /* Neon Red-Pink */
+}
+
+/* Apply General Styles */
+body {
+    font-family: 'Basic', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 15px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Tourney', cursive;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Buttons */
+button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c51135; /* darker neon pink */
+}
+
+/* Section Styling */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+img {
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+}
 
 /* Mobile View (Up to 767px) */
 @media screen and (max-width: 767px) {
@@ -43,51 +131,4 @@
     section {
         padding: 20px;
     }
-}
-
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header {
-    background-color: #222;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-section {
-    padding: 20px;
-    text-align: center;
-}
-
-img {
-    width: 150px;
-    border-radius: 50%;
-    margin-top: 10px;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
 }

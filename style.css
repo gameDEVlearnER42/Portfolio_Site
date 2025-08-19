@@ -1,28 +1,40 @@
-/* Branding Colors */
+/* (Light Mode) */
 :root {
-    --primary-color: #00e5ff;     /* Electric Cyan */
-    --secondary-color: #0a0a0a;   /* Near-Black */
-    --background-color: #121212;  /* Dark Gray */
-    --text-color: #e0e0e0;        /* Light Gray */
-    --accent-color: #ff1744;      /* Neon Red-Pink */
+    --background-color: #ffffff;       /* White background */
+    --text-color: #222222;             /* Dark gray text */
+    --header-color: #f4f4f4;           /* Light gray header */
+    --primary-color: #1a73e8;          /* Blue highlights */
+    --accent-color: #ff4081;           /* Pink accent */
+    --button-color: #1a73e8;           /* Buttons */
+    --button-text-color: white;        /* Button text */
 }
 
-/* Apply General Styles */
+/* Dark Mode */
+.dark-mode {
+    --background-color: #121212;       /* Dark gray background */
+    --text-color: #e0e0e0;             /* Light gray text */
+    --header-color: #0a0a0a;           /* Near-black header */
+    --primary-color: #00e5ff;          /* Electric cyan highlights */
+    --accent-color: #ff1744;           /* Neon red-pink accent */
+    --button-color: #ff1744;           /* Buttons */
+    --button-text-color: white;        /* Button text */
+}
+
+/* Apply Theme Variables */
 body {
-    font-family: 'Basic', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    margin: 0;
-    padding: 0;
+    font-family: 'Basic', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Header & Navigation */
 header {
-    background-color: var(--secondary-color);
+    background-color: var(--header-color);
     color: var(--primary-color);
     text-align: center;
     padding: 15px;
     border-bottom: 2px solid var(--primary-color);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 nav ul {
@@ -46,7 +58,6 @@ nav ul li a:hover {
     color: var(--accent-color);
 }
 
-/* Headings */
 h1, h2, h3 {
     font-family: 'Tourney', cursive;
     color: var(--primary-color);
@@ -56,23 +67,23 @@ h1, h2, h3 {
 
 /* Buttons */
 button {
-    background-color: var(--accent-color);
-    color: white;
+    background-color: var(--button-color);
+    color: var(--button-text-color);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
-
 button:hover {
-    background-color: #c51135; /* darker neon pink */
+    background-color: var(--accent-color);
 }
 
-/* Section Styling */
+/* Sections and other elements */
 section {
     padding: 20px;
     text-align: center;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 img {
@@ -81,96 +92,21 @@ img {
     margin-top: 10px;
 }
 
-/* Lists */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-/* Mobile View (Up to 767px) */
+/* Media Queries for Responsiveness */
 @media screen and (max-width: 767px) {
-    body {
-        font-size: 16px;
-    }
-    
-    header {
-        text-align: center;
-        padding: 10px;
-    }
-
-    nav ul {
-        display: block;
-        text-align: center;
-        padding: 0;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    img {
-        width: 120px;
-    }
-
-    section {
-        padding: 15px;
-    }
+    body { font-size: 16px; }
+    img { width: 120px; }
+    section { padding: 15px; }
+    nav ul li { display: block; margin: 10px 0; }
 }
 
-/* Tablet View (768px - 1023px) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    body {
-        font-size: 18px;
+    body { font-size: 18px; }
+    img { width: 140px; }
+    section { padding: 20px; }
+
+    #theme-toggle {
+        margin-bottom: 5%; /* space between button and heading */
     }
-
-    img {
-        width: 140px;
-    }
-
-    section {
-        padding: 20px;
-    }
-
-
-    /* Fade-In Animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-    display: block;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #2980b9;
-}
-
 
 }
